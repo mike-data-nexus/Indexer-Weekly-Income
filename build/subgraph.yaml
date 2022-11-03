@@ -1,6 +1,6 @@
 specVersion: 0.0.4
 schema:
-  file: ./schema.graphql
+  file: schema.graphql
 dataSources:
   - kind: ethereum
     name: Contract
@@ -18,14 +18,14 @@ dataSources:
         - WeeklyData
       abis:
         - name: Contract
-          file: ./abis/Contract.json
+          file: Contract\abis\Contract.json
         - name: ChainlinkOracle
-          file: ./abis/ChainlinkOracle.json
+          file: Contract\abis\ChainlinkOracle.json
       eventHandlers:
         - event: RebateClaimed(indexed address,indexed bytes32,indexed
             address,uint256,uint256,uint256,uint256,uint256)
           handler: handleRebateClaimed
-      file: ./src/contract.ts
+      file: Contract\Contract.wasm
   - kind: ethereum
     name: RewardsManager
     network: mainnet
@@ -41,14 +41,13 @@ dataSources:
         - Indexer
       abis:
         - name: RewardsManager
-          file: ./abis/RewardsManager.json
+          file: RewardsManager\abis\RewardsManager.json
         - name: ChainlinkOracle
-          file: ./abis/ChainlinkOracle.json
+          file: RewardsManager\abis\ChainlinkOracle.json
       eventHandlers:
         - event: RewardsAssigned(indexed address,indexed address,uint256,uint256)
           handler: handleRewardsAssigned
-      file: ./src/contract.ts
-
+      file: Contract\Contract.wasm
   - kind: ethereum
     name: staking
     network: mainnet
@@ -64,8 +63,8 @@ dataSources:
         - DelegationParametersUpdated
       abis:
         - name: staking
-          file: ./abis/staking.json
+          file: staking\abis\staking.json
       eventHandlers:
         - event: DelegationParametersUpdated(indexed address,uint32,uint32,uint32)
           handler: handleDelegationParametersUpdated
-      file: ./src/contract.ts
+      file: Contract\Contract.wasm

@@ -53,7 +53,7 @@
       {
         "indexed": false,
         "internalType": "bool",
-        "name": "isDelegator",
+        "name": "isPublic",
         "type": "bool"
       }
     ],

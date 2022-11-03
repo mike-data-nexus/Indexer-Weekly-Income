@@ -2,6 +2,9 @@
   "mainnet": {
     "Contract": {
       "address": "0xf55041e37e12cd407ad00ce2910b8269b01263b9"
+    },
+    "staking": {
+      "address": "0x0Cf97E609937418eBC8C209404B947cBC914F599"
     }
   }
 }
